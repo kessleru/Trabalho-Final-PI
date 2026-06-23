@@ -1,0 +1,244 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: fadeIn 0.15s ease;
+}
+
+.modal {
+  /* Gradiente linear suave que clareia a cor do tipo do Pokémon */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.95) 100%), var(--modal-type-color, #ffffff);
+  border-radius: 20px;
+  padding: 24px 20px 20px;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #7b7b7b;
+  cursor: pointer;
+  display: flex;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #1a1a1a;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 8px 16px;
+}
+
+.modal-header img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.modal-header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-id {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #7b7b7b;
+  letter-spacing: 0.5px;
+}
+
+.modal-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 2px 0 4px;
+}
+
+.modal-species {
+  display: block;
+  font-size: 0.85rem;
+  color: #555555;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+/* Card Branco de Conteúdo */
+.modal-content-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Medidas */
+.modal-measures {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 18px;
+}
+
+.measure {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555555;
+}
+
+.measure svg {
+  color: #7b7b7b;
+}
+
+.measure-label {
+  font-size: 0.8rem;
+  color: #8c8c8c;
+}
+
+.measure-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-left: auto;
+}
+
+/* Seções */
+.modal-section {
+  margin-bottom: 20px;
+}
+
+.modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.modal-section h3 {
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: #6b6b6b;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-section h3 svg {
+  color: #7b7b7b;
+}
+
+/* Habilidades */
+.abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ability {
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: capitalize;
+}
+
+.hidden-ability {
+  color: #7b7b7b;
+  border-style: dashed;
+  background: #fafafa;
+}
+
+.hidden-ability em {
+  font-size: 0.65rem;
+  color: #a0a0a0;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-label {
+  width: 36px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7b7b7b;
+  text-align: right;
+}
+
+.stat-track {
+  flex: 1;
+  height: 6px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: var(--modal-type-color, #1a1a1a);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.stat-value {
+  width: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .modal { padding: 20px 16px 16px; }
+  .modal-header { flex-direction: column; text-align: center; gap: 12px; }
+  .modal-header img { width: 100px; height: 100px; }
+}
+
+

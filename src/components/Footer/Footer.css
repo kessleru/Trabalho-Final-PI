@@ -1,0 +1,38 @@
+.footer {
+  margin-top: 48px;
+  padding: 24px 24px;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-author {
+  font-size: 0.8rem;
+  color: #999;
+  letter-spacing: 0.02em;
+}
+
+.footer-author span {
+  font-weight: 600;
+  color: #777;
+}
+
+.footer-license {
+  font-size: 0.7rem;
+  color: #b0b0b0;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 20px 16px;
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,32 @@
+.filtro-tipos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.chip {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: #6b6b6b;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--type-color, #6b6b6b);
+  color: var(--type-color, #1a1a1a);
+}
+
+.chip.active {
+  background-color: var(--type-color, #1a1a1a);
+  color: #fff;
+  border-color: var(--type-color, #1a1a1a);
+}
