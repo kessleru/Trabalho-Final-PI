@@ -1,6 +1,7 @@
 # Pokédex
 
-Pokédex web feita com React + Vite, consumindo a [PokeAPI](https://pokeapi.co/).
+Aplicação web de Pokédex para explorar e consultar Pokémon de forma rápida, com listagem paginada, filtro por tipo e modal de detalhes.
+O projeto foi construído com React + Vite e consome a [PokeAPI](https://pokeapi.co/).
 
 ## Pré-requisitos
 
